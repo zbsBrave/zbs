@@ -21,7 +21,7 @@ public class HeapSort {
     public static void heapSort(int[] arr){
         //1,首先构建大顶堆
         //从最后一个 非叶节点n/2-1 开始向前遍历，调整节点性质，使之成为大顶堆
-        for(int i=arr.length/2-1; i>=0; i--) {
+        for(int i=arr.length/2-1; i>=0; i--) {//注意 =0 不能少
             buildHeap(arr,i,arr.length);
         }
         //2,交换堆顶和当前末尾的节点，重置大顶堆
