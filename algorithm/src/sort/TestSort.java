@@ -14,7 +14,12 @@ public class TestSort {
         System.out.println(Arrays.toString(arr));
     }
     public static void sort(int[] arr){
-        quickSort(arr,0,arr.length-1);
+        for(int p=1;p<arr.length;p++){
+            int t = arr[p],i=p;
+            for(; i>0 && arr[i-1]<t; i--)
+                arr[i] = arr[i-1];
+            arr[i] = t;
+        }
     }
     public static void quickSort(int[] arr,int i,int j){
         if(i<j){
