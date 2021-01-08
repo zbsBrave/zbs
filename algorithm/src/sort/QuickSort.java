@@ -17,6 +17,7 @@ public class QuickSort {
     }
 
     private static void quickSort(int[] arr, int left, int right) {
+        //todo 待修改
         if(left < right){
             int mid = findMid(arr, left, right);//找出基准值
 
