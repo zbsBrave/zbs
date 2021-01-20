@@ -36,7 +36,7 @@ public class WebsocketServer {
      * @param session 会话
      */
     @OnOpen
-    public void onOpen(@PathParam("id") String id, Session session) throws IOException {
+    public void onOpen(@PathParam("id") String id, Session session){
         logger.info("onOpen ===> id={}的客户端开启了websocket",id);
         this.id = id;
         this.session = session;
@@ -44,7 +44,6 @@ public class WebsocketServer {
             onlineCount.incrementAndGet();
         }
         SERVER_MAP.put(id,this);
-
         sendMessage("websocket 连接成功");
     }
 
@@ -56,6 +55,7 @@ public class WebsocketServer {
     @OnMessage
     public void onMessage(String message, Session session) {
         logger.info("onMessage ===> 用户id: {} ,消息: {}",id,message);
+        sendMessage("收到");
     }
 
     /**
@@ -81,8 +81,12 @@ public class WebsocketServer {
      * 服务器发送消息
      * @param message 消息内容
      */
-    public void sendMessage(String message) throws IOException {
-        this.session.getBasicRemote().sendText(message);
+    public void sendMessage(String message){
+        try {
+            this.session.getBasicRemote().sendText(message);
+        } catch (IOException e) {
+            logger.error("发送消息失败",e);
+        }
     }
 
     /**
