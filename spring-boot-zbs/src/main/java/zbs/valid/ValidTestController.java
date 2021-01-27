@@ -12,6 +12,28 @@ import zbs.valid.notImportant.UserServiceI;
 import javax.annotation.Resource;
 
 /**
+ * 异常：
+ *      1，校验基本类型参数(即直接校验参数)，需要在类上标注@Validated
+ *          抛出：javax.validation.ConstraintViolationException
+ *              get 基本参数类型    ：@GetMapping("/tst") public void tk(@Min(value = 1) Integer id)
+ *      2，校验复杂封装对象(即校验参数的属性)
+ *          抛出：org.springframework.validation.BindException
+ *              get 复杂封装对象    ：@GetMapping("/tst") public void tk(@Valid Tk tk)
+ *              post表单提交的方式  ：@PostMapping("/tst") public void tk(@Valid Tk tk)
+ *      3，校验复杂封装对象(即校验参数的属性) ，通过json提交(即参数需要标注@RequestBody)       
+ *          抛出：org.springframework.web.bind.MethodArgumentNotValidException
+ *              post json提交的方式 ：@PostMapping("/tst") public void tk(@Valid @RequestBody Tk tk)
+ *              
+ * 注意：
+ *      1，在非controller类上标注@Validated时，只有当参数标注有@Valid注解时才会进行校验
+ *          void tk1(@Valid Tk tk);     有效
+ *          void tk(@Validated  Tk tk); 无效
+ *          void tk3( Tk tk);           无效
+ *      2，在controller校验参数时，不加@Valid @Validated时也生效
+ *          void tk1(@Valid Tk tk);     有效
+ *          void tk(@Validated  Tk tk); 有效
+ *          void tk3( Tk tk);           有效
+ *          
  * @author zhangbaisen
  * @since 2021/1/15
  */
