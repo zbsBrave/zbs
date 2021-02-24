@@ -7,3 +7,5 @@ spring:
     password: admin
     connection-timeout: 6000
     virtual-host: /
+    publisher-confirm-type: correlated #发送者开启 confirm 确认机制，即消息到达交换机。默认NONE，即关闭
+#    publisher-confirms: true

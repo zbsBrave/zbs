@@ -19,5 +19,7 @@ public class RabbitController {
     public void sendMsgToDelayQueueA(String msg){
         log.info("当前时间：{},发送消息：{}",new Date(),msg);
         rabbitTemplate.convertAndSend(RabbitConfig.delay_exchange,RabbitConfig.delay_routing_key_a,msg);
+//        rabbitTemplate.convertAndSend(RabbitConfig.delay_exchange,RabbitConfig.delay_routing_key_a,msg,
+//                new CorrelationData("123"));
     }
 }
