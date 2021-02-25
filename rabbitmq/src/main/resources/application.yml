@@ -1,0 +1,11 @@
+server:
+  port: 8080
+spring:
+  rabbitmq:
+    addresses: 192.168.146.128:5672 # 集群地址，用逗号分隔
+    username: admin
+    password: admin
+    connection-timeout: 6000
+    virtual-host: /
+    publisher-confirm-type: correlated #发送者开启 confirm 确认机制，即消息到达交换机。默认NONE，即关闭
+#    publisher-confirms: true
