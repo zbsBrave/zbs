@@ -4,12 +4,14 @@ import java.util.Arrays;
 
 /**
  * 冒泡排序
+ * 最好 O(n) 最坏O(n平方) 稳定算法
  * 两两交换
  */
-public class BubbleSort {
+public class S1_BubbleSort {
     public static void main(String[] args) {
         int[] arr = {6,1,3,2,10,13,5,7};
-        bubbleSort(arr);
+        //bubbleSort(arr);
+        bubbleSort0(arr);
         System.out.println(Arrays.toString(arr));
     }
     //将 最大/小值 移动到最右边
@@ -17,6 +19,15 @@ public class BubbleSort {
         for(int i=0; i<arr.length-1; i++){//遍历的次数
             for(int j=0; j<arr.length-i-1; j++){//依次比较两个数的大小
                 if(arr[j]<arr[j+1]) Util.swap(arr,j,j+1);
+            }
+        }
+    }
+
+    //这种方式更容易理解，从浙大公开课看到的
+    public static void bubbleSort0(int[] arr){
+        for(int p=arr.length-1; p>=0; p--){
+            for(int i=0; i<p; i++){
+                if(arr[i]<arr[i+1]) Util.swap(arr,i,i+1);
             }
         }
     }

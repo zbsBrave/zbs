@@ -4,6 +4,8 @@ import java.util.Arrays;
 
 /**
  * 插入排序
+ * 最好 O(n) 最坏O(n平方) 稳定算法
+ *
  * 原理：通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。
  * 从第一个元素开始，该元素可以认为已经被排序；
  * 取出下一个元素，在已经排序的元素序列中从后向前扫描；
@@ -14,7 +16,7 @@ import java.util.Arrays;
  * @author zbs
  * @since  2020/11/27
  */
-public class InsertionSort {
+public class S2_InsertionSort {
     public static void main(String[] args) {
         int[] arr = {1,5,3,9,2,4,7};
         insertionSort(arr);
