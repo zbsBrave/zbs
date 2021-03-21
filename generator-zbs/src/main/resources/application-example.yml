@@ -1,0 +1,22 @@
+
+generator:
+  datasource:
+    # mysql or oracle, default mysql
+    driver: com.mysql.cj.jdbc.Driver
+    type: mysql
+    url: jdbc:mysql://localhost:3306/zbs_tool?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: qaz123
+
+  package: com
+#  template:
+#    base-path: mybatis-plus
+#    output-paths: |
+#      Entity.java.vm: src/main/java/{packagePath}/entity/{className}.java
+#      Mapper.java.vm: src/main/java/{packagePath}/mapper/{className}Mapper.java
+#      Service.java.vm: src/main/java/{packagePath}/service/{className}Service.java
+#      ServiceImpl.java.vm: src/main/java/{packagePath}/service/impl/{className}ServiceImpl.java
+  template:
+    base-path: mybatis-default
+    output-paths: |
+      Mapper.xml.vm: src/main/java/{packagePath}/mapper/{className}Mapper.xml
