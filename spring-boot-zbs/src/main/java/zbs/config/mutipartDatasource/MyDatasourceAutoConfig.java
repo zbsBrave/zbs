@@ -33,10 +33,10 @@ public class MyDatasourceAutoConfig {
     public static Map<Object, Object> createDataSourceMap(){
         Map<Object, Object> dataSourceMap = new HashMap<>();
         dataSourceMap.put("db1",createDataSource(
-                        "jdbc:mysql://localhost:3306/db1?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai",
+                        "jdbc:mysql://localhost:3306/db1?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true",
                             "com.mysql.cj.jdbc.Driver","root","123"));
         dataSourceMap.put("db2",createDataSource(
-                "jdbc:mysql://localhost:3306/db2?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai",
+                "jdbc:mysql://localhost:3306/db2?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true",
                 "com.mysql.cj.jdbc.Driver","root","123"));
 
         return dataSourceMap;
