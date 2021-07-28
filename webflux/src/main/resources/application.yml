@@ -1,0 +1,4 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://root:z3415bcs@81.68.160.159:27017/test?authSource=admin

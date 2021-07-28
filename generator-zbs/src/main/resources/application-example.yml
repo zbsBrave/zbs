@@ -2,11 +2,20 @@
 generator:
   datasource:
     # mysql or oracle, default mysql
-    driver: com.mysql.cj.jdbc.Driver
+#    driver: com.mysql.cj.jdbc.Driver
+#    type: mysql
+#    url: jdbc:mysql://localhost:3306/zbs_tool?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+#    username: root
+#    password: qaz123
+    driver: com.mysql.jdbc.Driver
     type: mysql
-    url: jdbc:mysql://localhost:3306/zbs_tool?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
-    username: root
-    password: qaz123
+#    url: jdbc:mysql://10.10.1.21:3306/syhd_dev_platform?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&useUnicode=true
+    url: jdbc:mysql://10.10.1.21:3306/syhd_cloud_game?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&useUnicode=true
+#    url: jdbc:mysql://10.10.1.21:3306/syhd_unified_system?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&useUnicode=true
+#    url: jdbc:mysql://10.10.1.21:3306/syhd_test?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&useUnicode=true
+#    url: jdbc:mysql://10.10.1.21:3306/opensite?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&useUnicode=true
+    username: syhd
+    password: syhd!@#321
 
   package: com
 #  template:
@@ -19,4 +28,4 @@ generator:
   template:
     base-path: mybatis-default
     output-paths: |
-      Mapper.xml.vm: src/main/java/{packagePath}/mapper/{className}Mapper.xml
+      Mapper.xml.vm: mapper/{className}Mapper.xml

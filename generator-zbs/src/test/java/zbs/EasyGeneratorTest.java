@@ -20,7 +20,13 @@ public class EasyGeneratorTest {
 
     @Test
     public void test() {
-        String[] tableNames = {"user"};
+//        String[] tableNames = {"banner"};
+//        String[] tableNames = {"fusion_package_role_base","fusion_package_role_channel","fusion_package_role_white_list"};
+//        String[] tableNames = {"syhd_channels"};
+//        String[] tableNames = {"us_device_info_channel"};
+//        String[] tableNames = {"channel_config"};
+//        String[] tableNames = {"app_update_resource"};
+        String[] tableNames = {"fusion_config"};
         generatorService.generateZip(tableNames, "C:\\Users\\zbs\\Documents\\code.zip");
     }
 

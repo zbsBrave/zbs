@@ -50,6 +50,7 @@ public class MySQLTableServiceImpl extends BaseTableService {
 //        return "com.mysql.jdbc.Driver";
 //    }
     protected String getDriverClassName() {
+        System.out.println("========================"+this.driverClassName);
         return this.driverClassName;
     }
 
