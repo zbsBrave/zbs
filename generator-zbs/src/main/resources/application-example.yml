@@ -9,8 +9,9 @@ generator:
 #    password: qaz123
     driver: com.mysql.jdbc.Driver
     type: mysql
-#    url: jdbc:mysql://10.10.1.21:3306/syhd_dev_platform?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&useUnicode=true
-    url: jdbc:mysql://10.10.1.21:3306/syhd_cloud_game?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&useUnicode=true
+#    url: jdbc:mysql://10.10.1.30:3306/syhd_dev_platform?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&useUnicode=true
+    url: jdbc:mysql://10.10.1.30:3306/syhd_cloud_game?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&useUnicode=true
+#    url: jdbc:mysql://10.10.1.21:3306/syhd_cloud_game?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&useUnicode=true
 #    url: jdbc:mysql://10.10.1.21:3306/syhd_unified_system?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&useUnicode=true
 #    url: jdbc:mysql://10.10.1.21:3306/syhd_test?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&useUnicode=true
 #    url: jdbc:mysql://10.10.1.21:3306/opensite?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&useUnicode=true
