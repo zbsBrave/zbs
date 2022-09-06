@@ -1,10 +1,11 @@
-package rabbitmq.config;
+package rabbitmq.delayExchange;
 
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
 import org.springframework.amqp.core.DirectExchange;
 import org.springframework.amqp.core.Queue;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -19,6 +20,7 @@ import java.util.Map;
  * @author zhangbaisen
  */
 @Configuration
+@ConditionalOnProperty(name = "my.delay.exchange", havingValue = "true", matchIfMissing = false)
 public class RabbitConfig {
     public static final String delay_exchange = "delay.exchange";
     public static final String delay_queue_a = "delay.queue.a";

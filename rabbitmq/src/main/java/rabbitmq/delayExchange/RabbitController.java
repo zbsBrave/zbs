@@ -1,16 +1,18 @@
-package rabbitmq;
+package rabbitmq.delayExchange;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import rabbitmq.config.RabbitConfig;
+import rabbitmq.delayExchange.RabbitConfig;
 
 import javax.annotation.Resource;
 import java.util.Date;
 
 @RestController
 @Slf4j
+@ConditionalOnProperty(name = "my.delay.exchange", havingValue = "true", matchIfMissing = false)
 public class RabbitController {
     @Resource
     private RabbitTemplate rabbitTemplate;

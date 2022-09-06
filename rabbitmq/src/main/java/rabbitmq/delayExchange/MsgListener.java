@@ -1,11 +1,12 @@
-package rabbitmq;
+package rabbitmq.delayExchange;
 
 import com.rabbitmq.client.Channel;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
-import rabbitmq.config.RabbitConfig;
+import rabbitmq.delayExchange.RabbitConfig;
 
 import java.io.IOException;
 import java.util.Date;
@@ -16,6 +17,7 @@ import java.util.Date;
  */
 @Component
 @Slf4j
+@ConditionalOnProperty(name = "my.delay.exchange", havingValue = "true", matchIfMissing = false)
 public class MsgListener {
     /**  监听死信队列 */
     @RabbitListener(queues = RabbitConfig.dead_letter_queue)
